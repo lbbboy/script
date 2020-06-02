@@ -130,7 +130,7 @@ Service_filebrowser(){
 check_database(){
 	if [[ ! -e ${filebrowser_db_file} ]]; then
 	"$filebrowser_bin" -d "$filebrowser_db_file" config init
-	"$filebrowser_bin" -d "$filebrowser_db_file" config set --address 0.0.0.0 --port ${port} --root ${file_dir}
+	"$filebrowser_bin" -d "$filebrowser_db_file" config set --address 127.0.0.1 --port ${port} --root ${file_dir}
 	"$filebrowser_bin" -d "$filebrowser_db_file" users add ${file_user} ${file_pw} --perm.admin
 	ip=$(curl -s ipinfo.io/ip)
 	clear
