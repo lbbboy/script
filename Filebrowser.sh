@@ -132,7 +132,7 @@ check_database(){
 	"$filebrowser_bin" -d "$filebrowser_db_file" config init
 	"$filebrowser_bin" -d "$filebrowser_db_file" config set --address 127.0.0.1 --port ${port} --root ${file_dir}
 	"$filebrowser_bin" -d "$filebrowser_db_file" users add ${file_user} ${file_pw} --perm.admin
-	ip=$(curl -s ipinfo.io/ip)
+	ip=$(127.0.0.1)
 	clear
 	echo -e "
 		访问地址: ${yellow}http://${ip}:${port}/$none
